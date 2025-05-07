@@ -4,18 +4,114 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CIT5900 Project 3 Dashboard</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f7f9fa;
+      color: #333;
+    }
+    header {
+      background: #0366d6;
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 1rem;
+      transition: transform .1s ease-in-out;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: #0366d6;
+    }
+    .card p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    .card a {
+      text-decoration: none;
+      color: #0366d6;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-  <h1>Project 3 Dashboard</h1>
-  <p>Welcome—use the links below to explore our analyses.</p>
-  <ul>
-    <li><a href="merged_deduped.csv">Merged + Deduped Outputs (Task 1)</a></li>
-    <li><a href="enriched_outputs_sample.zip">Enriched Outputs (Task 2)</a></li>
-    <li><a href="publication_trend.png">Publication Trend Chart (Task 3)</a></li>
-    <li><a href="top_10_rdc.png">Top 10 RDCs Chart (Task 3)</a></li>
-    <li><a href="top_10_rdc.html">Top 10 RDCs Table (Task 3)</a></li>
-    <li><a href="top_10_authors.png">Top 10 Authors Chart (Task 3)</a></li>
-    <!-- Add Task 4 outputs here as you generate them -->
-  </ul>
+  <header>
+    <h1>Project 3 Dashboard</h1>
+    <p><em>Exploratory analysis and data enrichment for ResearchOutputs</em></p>
+    <p><strong>Team:</strong> Zhan Shi, Shreyash Khatiwada, Liam Rivard, Yi‑Hsuan Cheng, Xinyi Wang</p>
+  </header>
+  <main>
+    <p>This dashboard presents our Task 1–4 deliverables. Click any card below to download the data or view a visualization.</p>
+    <ul class="cards">
+      <li class="card">
+        <h3>Task 1: Merged &amp; Deduped Outputs</h3>
+        <p>All eight CSVs combined and deduplicated into one master file.</p>
+        <a href="merged_deduped.csv">Download CSV</a>
+      </li>
+      <li class="card">
+        <h3>Task 2: Enriched Outputs</h3>
+        <p>Enriched with metadata fields (IDs, titles, pages, etc.) via public APIs.</p>
+        <a href="enriched_outputs_sample.zip">Download ZIP</a>
+      </li>
+      <li class="card">
+        <h3>Task 3: Publication Trend</h3>
+        <p>Year‑by‑year count of outputs to visualize publication trends over time.</p>
+        <a href="publication_trend.png">View Chart</a>
+      </li>
+      <li class="card">
+        <h3>Task 3: Top 10 RDCs</h3>
+        <p>Bar chart showing the ten research domains with the most outputs.</p>
+        <a href="top_10_rdc.png">View Chart</a><br/>
+        <a href="top_10_rdc.html">View Table</a>
+      </li>
+      <li class="card">
+        <h3>Task 3: Top 10 Authors</h3>
+        <p>Most prolific authors based on number of outputs.</p>
+        <a href="top_10_authors.png">View Chart</a>
+      </li>
+      <!-- Task 4 cards go here when ready -->
+    </ul>
+  </main>
+  <footer>
+    &copy; 2025 CIT5900 Project 3 • Hosted on GitHub Pages
+  </footer>
 </body>
 </html>
