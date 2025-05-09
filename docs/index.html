@@ -7,61 +7,61 @@
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
       background: #f7f9fa;
       color: #333;
+      margin: 0;
     }
     header {
       background: #0366d6;
       color: white;
-      padding: 1.5rem 1rem;
+      padding: 1rem;
       text-align: center;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
+    nav {
+      background: #024e9b;
+      padding: 0.5rem;
+      text-align: center;
     }
-    header p {
-      margin: 0.5rem 0;
-      font-size: 1rem;
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
     }
     main {
-      max-width: 900px;
+      max-width: 960px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
       gap: 1rem;
       list-style: none;
       padding: 0;
     }
     .card {
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       padding: 1rem;
-      transition: transform .1s ease-in-out;
+      transition: transform .15s ease;
     }
     .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
     .card h3 {
       margin-top: 0;
-      font-size: 1.1rem;
       color: #0366d6;
     }
     .card p {
       font-size: 0.9rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
     .card a {
+      color: #024e9b;
       text-decoration: none;
-      color: #0366d6;
       font-weight: bold;
     }
     footer {
@@ -69,77 +69,100 @@
       padding: 1rem;
       font-size: 0.8rem;
       color: #666;
+      border-top: 1px solid #ddd;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Project 3 Dashboard</h1>
-    <p><em>Exploratory analysis and data enrichment for ResearchOutputs</em></p>
-    <p><strong>Team:</strong> Zhan Shi, Shreyash Khatiwada, Liam Rivard, Yi‑Hsuan Cheng, Xinyi Wang</p>
+    <p><em>Putting it all together: deduplication, enrichment, EDA, modeling & visualization</em></p>
+    <p><strong>Team:</strong> Zhan Shi | Shreyash Khatiwada | Liam Rivard | Yi‑Hsuan Cheng | Xinyi Wang</p>
   </header>
+
+  <nav>
+    <a href="#task1">Task 1</a>
+    <a href="#task2">Task 2</a>
+    <a href="#task3">Task 3</a>
+    <a href="#task4">Task 4</a>
+    <a href="#task5">Task 5</a>
+  </nav>
+
   <main>
-    <p>This dashboard presents our Task 1–4 deliverables. Click any card below to download the data or view a visualization.</p>
+    <p>This dashboard surfaces our five major Project 3 deliverables. Click any card to download data or view charts.</p>
     <ul class="cards">
-      <li class="card">
-        <h3>Task 1: Merged &amp; Deduped Outputs</h3>
-        <p>All eight CSVs combined and deduplicated into one master file.</p>
-        <a href="enriched_outputs_sample_Task_1">Download CSV</a>
+      <!-- Task 1 -->
+      <li id="task1" class="card">
+        <h3>Task 1 – Data Deduplication</h3>
+        <p>We merged & deduplicated all eight raw CSVs into one clean master file.</p>
+        <a href="enriched_outputs_sample_Task_1">Download Merged CSV</a>
       </li>
-      <li class="card">
-        <h3>Task 2: Enriched Outputs</h3>
-        <p>Enriched with metadata fields (IDs, titles, pages, etc.) via public APIs.</p>
-        <a href="ResearchOutputs_Group8_Task2_Enriched.csv">Download</a>
+
+      <!-- Task 2 -->
+      <li id="task2" class="card">
+        <h3>Task 2 – Data Enrichment</h3>
+        <p>Enriched with project metadata (titles, statuses, RDCs, PIs) from authoritative sources.</p>
+        <a href="ResearchOutputs_Group8_Task2_Enriched.csv">Download Enriched CSV</a>
       </li>
-      <li class="card">
-        <h3>Task 3: Publication Trend</h3>
-        <p>Year‑by‑year count of outputs to visualize publication trends over time.</p>
+
+      <!-- Task 3 -->
+      <li id="task3" class="card">
+        <h3>Task 3 – Publication Trend</h3>
+        <p>Year‑by‑year publication counts to show overall research activity.</p>
         <a href="publication_trend.png">View Chart</a>
       </li>
       <li class="card">
-        <h3>Task 3: Top 10 RDCs</h3>
-        <p>Bar chart showing the ten research domains with the most outputs.</p>
+        <h3>Task 3 – Top 10 RDCs</h3>
+        <p>The leading research domains by output volume.</p>
         <a href="top_10_rdc.png">View Chart</a><br/>
         <a href="top_10_rdc.html">View Table</a>
       </li>
       <li class="card">
-        <h3>Task 3: Top 10 Authors</h3>
+        <h3>Task 3 – Top 10 Authors</h3>
         <p>Most prolific authors based on number of outputs.</p>
         <a href="top_10_authors.png">View Chart</a>
       </li>
       <li class="card">
-        <h3>Task 3: Top 10 Most Prolific PIs</h3>
-        <p>Bar chart showing the ten principal investigators with the most outputs.</p>
+        <h3>Task 3 – Top 10 PIs</h3>
+        <p>Principal investigators leading the most projects/outputs.</p>
         <a href="top_10_pis.png">View Chart</a><br/>
         <a href="top_10_pis.html">View Table</a>
       </li>
-<!-- Task 4: Classification -->
-<li class="card">
-  <h3>Task 4: Random Forest Performance</h3>
-  <p>Confusion matrix and top features for predicting publication status.</p>
-  <a href="rf_confusion_matrix.png">View Confusion Matrix</a><br/>
-  <a href="rf_feature_importance.png">View Feature Importances</a>
-</li>
 
-<li class="card">
-  <h3>Task 4: Logistic Regression Performance</h3>
-  <p>Confusion matrix for logistic regression baseline.</p>
-  <a href="lr_confusion_matrix.png">View Confusion Matrix</a>
-</li>
+      <!-- Task 4 -->
+      <li id="task4" class="card">
+        <h3>Task 4 – Random Forest</h3>
+        <p>Confusion matrix & feature importances for publication‑status prediction.</p>
+        <a href="rf_confusion_matrix.png">RF Confusion Matrix</a><br/>
+        <a href="rf_feature_importance.png">RF Feature Importances</a>
+      </li>
+      <li class="card">
+        <h3>Task 4 – Logistic Regression</h3>
+        <p>Baseline confusion matrix for comparison.</p>
+        <a href="lr_confusion_matrix.png">View Confusion Matrix</a>
+      </li>
+      <li class="card">
+        <h3>Task 4 – PCA Explained Variance</h3>
+        <p>How much variance each principal component captures.</p>
+        <a href="pca_explained_variance.png">View Chart</a>
+      </li>
+      <li class="card">
+        <h3>Task 4 – KMeans Clustering</h3>
+        <p>Documents clustered in PCA space, highlighting group structure.</p>
+        <a href="kmeans_pca_scatter.png">View Chart</a>
+      </li>
 
-<!-- Task 4: PCA & Clustering -->
-<li class="card">
-  <h3>Task 4: PCA Explained Variance</h3>
-  <p>Variance captured by each principal component.</p>
-  <a href="pca_explained_variance.png">View Chart</a>
-</li>
-<li class="card">
-  <h3>Task 4: KMeans Clustering</h3>
-  <p>Scatter of documents in the 2‑D PCA space colored by cluster.</p>
-  <a href="kmeans_pca_scatter.png">View Chart</a>
-</li>
+      <!-- Task 5 (current page) -->
+      <li id="task5" class="card">
+        <h3>Task 5 – GitHub Pages</h3>
+        <p>This live dashboard you’re viewing—built with plain HTML/CSS and hosted on GitHub Pages.</p>
+        <a href="https://shreyk2002.github.io/CIT5900_Project3/" target="_blank">Visit Dashboard</a>
+      </li>
     </ul>
   </main>
+
   <footer>
     &copy; 2025 CIT5900 Project 3 • Hosted on GitHub Pages
   </footer>
